@@ -41,7 +41,7 @@ This packages includes:
 ## Make sure you properly configured the Scones web service endpoint by properly configuring the ''config.ini'' configuration file on the server. By default, this file is located here on your server: <code>/usr/share/structwsf/scones/</code>
 ## In the ''php.ini'' file, you will have to enable (turn "On") the ''allow_url_include'' directive.
 ## Make sure the port tomcat6 runs on (8080 by default) is not used by another application (such as Jetty)
-#
+
 
 == Ontology ==
 
