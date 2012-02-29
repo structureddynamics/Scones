@@ -27,11 +27,11 @@ This packages includes:
 ## Scones.war is a packaged version of [http://gate.ac.uk/ GATE] + the [http://php-java-bridge.sourceforge.net/pjb/ PHP/Java bridge] softwares, configured for Scones's purposes. It includes the PHP/Java bridge version 6.2.1 and Gate version 7
 ## To install Scones.war, make sure tomcat6 is running, locate tomcat's webapps folder and copy Scones.war into that folder (/var/lib/tomcat6/webapps/ on a default Ubuntu installation), and wait until tomcat install & deploy the war file.
 ## Restart tomcat to properly handle this new web application by using this command:
-### JAVA_OPTS="-Dgate.plugins.home=/var/lib/tomcat6/webapps/Scones/Gate-Plugins" /etc/init.d/tomcat6 restart
-## Properly setup the ''50local.policy'' file on your server
+### <code>JAVA_OPTS="-Dgate.plugins.home=/var/lib/tomcat6/webapps/Scones/Gate-Plugins" /etc/init.d/tomcat6 restart</code>
+## Properly setup the <code>50local.policy</code> file on your server
 ### The more liberal permissions would be to add that line to that file:
-#### grant codeBase "file:/var/lib/tomcat6/webapps/Scones/WEB-INF/-" { permission java.security.AllPermission; }; 
-### Restart tomcat6 by using the command in 2.3.1
+#### grant codeBase <code>"file:/var/lib/tomcat6/webapps/Scones/WEB-INF/-" { permission java.security.AllPermission; };</code>
+### Restart tomcat6
 # Create GATE application
 ## You can use the [http://gate.ac.uk/sale/tao/split.html GATE Developper] user interface to create a new GATE application to use with Scones. Or simply use the <code>scones.xgapp</code> default application file.
 ### Create a new GATE pipeline, and save it into a XGAPP file.
@@ -41,6 +41,7 @@ This packages includes:
 ## Make sure you properly configured the Scones web service endpoint by properly configuring the ''config.ini'' configuration file on the server. By default, this file is located here on your server: <code>/usr/share/structwsf/scones/</code>
 ## In the ''php.ini'' file, you will have to enable (turn "On") the ''allow_url_include'' directive.
 ## Make sure the port tomcat6 runs on (8080 by default) is not used by another application (such as Jetty)
+#
 
 == Ontology ==
 
