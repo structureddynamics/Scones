@@ -26,8 +26,14 @@ This packages includes:
 # Install Scones.war
 ## Scones.war is a packaged version of [http://gate.ac.uk/ GATE] + the [http://php-java-bridge.sourceforge.net/pjb/ PHP/Java bridge] softwares, configured for Scones's purposes. It includes the PHP/Java bridge version 6.2.1 and Gate version 7
 ## To install Scones.war, make sure tomcat6 is running, locate tomcat's webapps folder and copy Scones.war into that folder (/var/lib/tomcat6/webapps/ on a default Ubuntu installation), and wait until tomcat install & deploy the war file.
-## Restart tomcat to properly handle this new web application by using this command:
-### <code>JAVA_OPTS="-Dgate.plugins.home=/var/lib/tomcat6/webapps/Scones/Gate-Plugins" /etc/init.d/tomcat6 restart</code>
+## Restart tomcat to properly handle this new web application. Depending on your setup, you may need to use one of the following set of commands:
+### <code>JAVA_OPTS="-Xms100M -Xmx600M -Dgate.plugins.home=/var/lib/tomcat6/webapps/Scones/Gate-Plugins"</code>
+### <code>export JAVA_OPTS</code>
+### <code>/etc/init.d/tomcat6 restart</code>
+## or
+### <code>CATALINA_OPTS="-Xms100M -Xmx600M -Dgate.plugins.home=/var/lib/tomcat6/webapps/Scones/Gate-Plugins"</code>
+### <code>export CATALINA_OPTS</code>
+### <code>/etc/init.d/tomcat6 restart</code>
 ## Properly setup the <code>50local.policy</code> file on your server
 ### The more liberal permissions would be to add that line to that file:
 #### grant codeBase <code>"file:/var/lib/tomcat6/webapps/Scones/WEB-INF/-" { permission java.security.AllPermission; };</code>
